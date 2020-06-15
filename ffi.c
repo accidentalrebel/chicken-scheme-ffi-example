@@ -13,5 +13,10 @@ Vec3* Vec3Create(float x, float y, float z)
 
 void Vec3Print(Vec3 v)
 {
-	printf("v (%f, %f, %f)\n", v.x, v.y, v.z);
+	printf("Vec3 to print: (%f, %f, %f)\n", v.x, v.y, v.z);
+}
+
+void KeyPrint(enum Keys k)
+{
+	printf("Key to print: %i\n", k);
 }

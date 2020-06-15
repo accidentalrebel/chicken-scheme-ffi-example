@@ -42,3 +42,22 @@ C_return(v);"))
   (vec3_x! v 7.7) ; Set x to 7.7
   (display (vec3_x v)) ; Display value of x
   (newline))
+
+;; Set up the enum for Keys enum
+(define-foreign-enum-type (keys int)
+  (keys->int int->keys)
+  ((up keys/up) UP)
+  ((right keys/right) RIGHT)
+  ((down keys/down) DOWN)
+  ((left keys/left) LEFT))
+
+(display keys/right)
+(newline)
+
+(define key_print
+  (foreign-lambda*
+   void
+   ((int a0))
+   "KeyPrint(a0);"))
+
+(key_print keys/left)
