@@ -25,3 +25,20 @@ C_return(v);"))
 
 (vec3_print (vec3_zero))
 (vec3_print (vec3_create 1.1 2.2 3.3))
+
+(import (chicken foreign))
+(import foreigners)
+
+ ;; Set up the accessors for Vec3 struct
+(define-foreign-record-type (vec3 Vec3)
+  (float x vec3_x vec3_x!)
+  (float y vec3_y vec3_y!)
+  (float z vec3_z vec3_z!))
+
+(let ((v (vec3_create 4.4 5.5 6.6)))
+  (display (vec3_x v)) ; Display value of x
+  (newline)
+  
+  (vec3_x! v 7.7) ; Set x to 7.7
+  (display (vec3_x v)) ; Display value of x
+  (newline))
