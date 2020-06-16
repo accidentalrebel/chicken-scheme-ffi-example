@@ -47,7 +47,7 @@ C_return(v);"))
   (display (vec3_x v)) ; Display value of x
   (newline)
   
-  (vec3_x! v 7.7) ; Set x to 7.7
+  (vec3_x! v 7.7)      ; Set x to 7.7
   (display (vec3_x v)) ; Display value of x
   (newline)
 
